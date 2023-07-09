@@ -475,6 +475,6 @@ See a detail example [here](examples/chunk.py).
 
 ## Bugs and Issues
 
-[Telegram](https://t.me/masachist)
-[Issue](https://github/masah1st/mhjson/Issue)
+[Telegram](https://t.me/dev_codwiz)
+[Issue](https://github/CodWize/mhjson/Issue)
 
