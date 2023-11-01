@@ -1,26 +1,27 @@
 class Matcher(object):
     """docstring for Helper."""
+
     def __init__(self):
         self.condition_mapper = {
-            '=': '_is_equal',
-            'eq': '_is_equal',
-            '!=': '_is_not_equal',
-            'neq': '_is_not_equal',
-            '>': '_is_greater',
-            'gt': '_is_greater',
-            '<': '_is_smaller',
-            'lt': '_is_smaller',
-            '>=': '_is_greater_equal',
-            'gte': '_is_greater_equal',
-            '<=': '_is_smaller_equal',
-            'lte': '_is_smaller_equal',
-            'in': '_is_in',
-            'notin': '_is_not_in',
-            'null': '_is_null',
-            'notnull': '_is_not_null',
-            'startswith': '_is_starts_with',
-            'endswith': '_is_ends_with',
-            'contains': '_is_contain'
+            "=": "_is_equal",
+            "eq": "_is_equal",
+            "!=": "_is_not_equal",
+            "neq": "_is_not_equal",
+            ">": "_is_greater",
+            "gt": "_is_greater",
+            "<": "_is_smaller",
+            "lt": "_is_smaller",
+            ">=": "_is_greater_equal",
+            "gte": "_is_greater_equal",
+            "<=": "_is_smaller_equal",
+            "lte": "_is_smaller_equal",
+            "in": "_is_in",
+            "notin": "_is_not_in",
+            "null": "_is_null",
+            "notnull": "_is_not_null",
+            "startswith": "_is_starts_with",
+            "endswith": "_is_ends_with",
+            "contains": "_is_contain",
         }
 
     def _is_equal(self, x, y):
@@ -93,9 +94,9 @@ class Matcher(object):
         :@return bool
         """
 
-        return isinstance(arr, list) and \
-            bool(len(([k for k in key if k in arr]
-                 if isinstance(key, list) else key in arr)))
+        return isinstance(arr, list) and bool(
+            len(([k for k in key if k in arr] if isinstance(key, list) else key in arr))
+        )
 
     def _is_not_in(self, key, arr):
         """Checks the given `key` is not exists in the given `arr`
@@ -170,10 +171,14 @@ class Matcher(object):
 
         :@return x, y
         """
-        return [[v.lower() if isinstance(v, str) else v for v in val]
-                if isinstance(val, list) else val.lower()
-                if isinstance(val, str) else val
-                for val in [x, y]]
+        return [
+            [v.lower() if isinstance(v, str) else v for v in val]
+            if isinstance(val, list)
+            else val.lower()
+            if isinstance(val, str)
+            else val
+            for val in [x, y]
+        ]
 
     def _match(self, x, op, y, case_insensitive):
         """Compare the given `x` and `y` based on `op`
@@ -186,8 +191,8 @@ class Matcher(object):
         :@return bool
         :@throws ValueError
         """
-        if (op not in self.condition_mapper):
-            raise ValueError('Invalid where condition given')
+        if op not in self.condition_mapper:
+            raise ValueError("Invalid where condition given")
 
         if case_insensitive:
             x, y = self._to_lower(x, y)
