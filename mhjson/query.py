@@ -39,7 +39,7 @@ class MHjson(object):
 
         :throws TypeError
         """
-        if isinstance(data, dict) or isinstance(data, list):
+        if isinstance(data, (dict, list)):
             self._raw_data = data
             self._json_data = copy.deepcopy(self._raw_data)
         else:
@@ -131,7 +131,7 @@ class MHjson(object):
         """
         if data is None:
             data = {}
-        if data and (isinstance(data, dict) or isinstance(data, list)):
+        if data and isinstance(data, (dict, list)):
             self._json_data = data
         else:
             self._json_data = copy.deepcopy(self._raw_data)
