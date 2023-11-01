@@ -175,7 +175,7 @@ class MHjson(object):
                 or_check |= and_check
             return or_check
 
-        self._json_data = list(filter(lambda item: func(item), self._json_data))
+        self._json_data = list(filter(func, self._json_data))
 
     # ---------- Query Methods ------------- #
 
