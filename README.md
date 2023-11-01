@@ -68,7 +68,7 @@ json_object = {
     ]
 };
 
-qe = JsonQ(file_path)
+qe = MHjson(file_path)
 res = qe.at('products').where('cat', '=', 2).get()
 print(res)
 
