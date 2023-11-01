@@ -9,11 +9,13 @@ from .matcher import Matcher
 class MHjson(object):
     """Query over Json file"""
 
-    def __init__(self, file_path="", data={}):
+    def __init__(self, file_path="", data=None):
         """
         :@param file_path: Set main json file path
         :@type file_path: string
         """
+        if data is None:
+            data = {}
         if file_path != "":
             self.from_file(file_path)
 
@@ -117,7 +119,7 @@ class MHjson(object):
         """Clone the exact same copy of the current object instance."""
         return copy.deepcopy(self._json_data)
 
-    def reset(self, data={}):
+    def reset(self, data=None):
         """JsonQuery object cen be reset to new data
 
         according to given data or previously given raw Json data
@@ -127,6 +129,8 @@ class MHjson(object):
 
         :@return self
         """
+        if data is None:
+            data = {}
         if data and (isinstance(data, dict) or isinstance(data, list)):
             self._json_data = data
         else:
