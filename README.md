@@ -5,7 +5,7 @@
 ## Installation
 
 ```
-pip install pip install https://github.com/Codwizer/mhjson/archive/main.zip --force-reinstall
+pip install https://github.com/Codwizer/mhjson/archive/main.zip --force-reinstall
 ```
 
 ## Usage
