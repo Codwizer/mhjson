@@ -51,8 +51,8 @@ class MHjson(object):
 
         :@throws IOError
         """
-        if file_path == '' or os.path.splitext(file_path)[1] != '.json':
-            raise IOError('Invalid Json file')
+        if file_path == "" or os.path.splitext(file_path)[1] != ".json":
+            raise IOError("Invalid Json file")
 
         with open(file_path) as json_file:
             self._raw_data = json.load(json_file)
@@ -107,7 +107,7 @@ class MHjson(object):
         :@return self
         :@throws KeyError
         """
-        leafs = root.strip(" ").split('.')
+        leafs = root.strip(" ").split(".")
         for leaf in leafs:
             if leaf:
                 self._json_data = self.__get_value_from_data(leaf, self._json_data)
@@ -163,10 +163,10 @@ class MHjson(object):
                 and_check = True
                 for query in queries:
                     and_check &= self._matcher._match(
-                        item.get(query.get('key'), None),
-                        query.get('operator'),
-                        query.get('value'),
-                        query.get('case_insensitive')
+                        item.get(query.get("key"), None),
+                        query.get("operator"),
+                        query.get("value"),
+                        query.get("case_insensitive"),
                     )
                 or_check |= and_check
             return or_check
@@ -188,12 +188,14 @@ class MHjson(object):
 
         :@return self
         """
-        self.__store_query({
-            "key": key,
-            "operator": operator,
-            "value": value,
-            "case_insensitive": case_insensitive
-        })
+        self.__store_query(
+            {
+                "key": key,
+                "operator": operator,
+                "value": value,
+                "case_insensitive": case_insensitive,
+            }
+        )
 
         return self
 
@@ -221,7 +223,7 @@ class MHjson(object):
 
         :@return self
         """
-        self.where(key, 'in', value)
+        self.where(key, "in", value)
         return self
 
     def where_not_in(self, key, value):
@@ -233,7 +235,7 @@ class MHjson(object):
 
         :@return self
         """
-        self.where(key, 'notin', value)
+        self.where(key, "notin", value)
         return self
 
     def where_null(self, key):
@@ -244,7 +246,7 @@ class MHjson(object):
 
         :@return self
         """
-        self.where(key, '=', 'None')
+        self.where(key, "=", "None")
         return self
 
     def where_not_null(self, key):
@@ -255,7 +257,7 @@ class MHjson(object):
 
         :@return self
         """
-        self.where(key, '!=', 'None')
+        self.where(key, "!=", "None")
         return self
 
     def where_start_with(self, key, value):
@@ -267,7 +269,7 @@ class MHjson(object):
 
         :@return self
         """
-        self.where(key, 'startswith', value)
+        self.where(key, "startswith", value)
         return self
 
     def where_end_with(self, key, value):
@@ -279,7 +281,7 @@ class MHjson(object):
 
         :@return self
         """
-        self.where(key, 'endswith', value)
+        self.where(key, "endswith", value)
         return self
 
     def where_contains(self, key, value):
@@ -291,7 +293,7 @@ class MHjson(object):
 
         :@return self
         """
-        self.where(key, 'contains', value)
+        self.where(key, "contains", value)
         return self
 
     # ---------- Aggregate Methods ------------- #
@@ -405,12 +407,12 @@ class MHjson(object):
         """
 
         if size == 0:
-            raise ValueError('Invalid chunk size')
+            raise ValueError("Invalid chunk size")
 
         self.__prepare()
         _new_content = []
 
-        while(len(self._json_data) > 0):
+        while len(self._json_data) > 0:
             _new_content.append(self._json_data[0:size])
             self._json_data = self._json_data[size:]
 
@@ -464,15 +466,10 @@ class MHjson(object):
         self.__prepare()
         if isinstance(self._json_data, list):
             if order == "asc":
-                self._json_data = sorted(
-                    self._json_data,
-                    key=lambda x: x.get(property)
-                )
+                self._json_data = sorted(self._json_data, key=lambda x: x.get(property))
             else:
                 self._json_data = sorted(
-                    self._json_data,
-                    key=lambda x: x.get(property),
-                    reverse=True
+                    self._json_data, key=lambda x: x.get(property), reverse=True
                 )
 
         return self
