@@ -5,7 +5,7 @@
 ## Installation
 
 ```
-pip install mhjson
+pip install pip install https://github.com/Codwizer/mhjson/archive/main.zip --force-reinstall
 ```
 
 ## Usage
