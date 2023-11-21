@@ -478,3 +478,6 @@ See a detail example [here](examples/chunk.py).
 [Telegram](https://t.me/dev_codwiz)
 [Issue](https://github/CodWize/mhjson/Issue)
 
+## License
+
+Developers © 2023-2090 by CodWiz is licensed under Attribution-NonCommercial-NoDerivatives 4.0 International 
