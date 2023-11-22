@@ -476,6 +476,7 @@ See a detail example [here](examples/chunk.py).
 ## Bugs and Issues
 
 [Telegram](https://t.me/dev_codwiz)
+[Telegram Chat](https://t.me/+9F8Nfbzh_7U2ZDRi)
 [Issue](https://github/CodWize/mhjson/Issue)
 
 ## License
