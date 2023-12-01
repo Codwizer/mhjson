@@ -481,4 +481,4 @@ See a detail example [here](examples/chunk.py).
 
 ## License
 
-Developers © 2023-2090 by CodWiz is licensed under Attribution-NonCommercial-NoDerivatives 4.0 International 
+[license](https://licenseit.ru/wiki/images/d/dd/Gplv3-127x51-logo.png)
