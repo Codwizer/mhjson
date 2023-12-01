@@ -481,4 +481,4 @@ See a detail example [here](examples/chunk.py).
 
 ## License
 
-[license](https://licenseit.ru/wiki/images/d/dd/Gplv3-127x51-logo.png)
+![license](https://licenseit.ru/wiki/images/d/dd/Gplv3-127x51-logo.png)
