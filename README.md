@@ -14,7 +14,7 @@ pip install https://github.com/Codwizer/mhjson/archive/main.zip --force-reinstal
 
 ## Bugs and Issues
 
-[Telegram](https://t.me/dev_codwiz) | [Telegram Chat](https://t.me/+9F8Nfbzh_7U2ZDRi) | [Issue](https://github/CodWize/mhjson/Issue)
+[Telegram](https://t.me/dev_codwiz) | [Telegram Chat](https://t.me/mhjson) | [Issue](https://github/CodWize/mhjson/Issue)
 
 ## License
 
